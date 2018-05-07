@@ -70,6 +70,17 @@ public:
     QTime noon(const QDate &d);
     QTime sunset(const QDate &d);
 
+    static double angle(int degrees, int minutes, int seconds)
+    {
+	double a;
+	a = seconds;
+	a /= 60.0;
+	a += minutes;
+	a /= 60.0;
+	a += degrees;
+	return a;
+    }
+
 private:    
     //  Convert radian angle to degrees
     double dRadToDeg(double dAngleRad)
